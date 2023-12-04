@@ -20,6 +20,10 @@ const UserSchema = new Schema(
       default: "6554c883ab8e8fbcc83c643a",
       ref: "Role",
     },
+    logwithGoogle: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     versionKey: false,
