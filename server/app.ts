@@ -1,5 +1,6 @@
 import express from "express";
 import passport from "passport";
+import cors from "cors";
 
 import productsRouter from "./routes/productsRouter";
 import categoriesRouter from "./routes/categoriesRouter";
@@ -17,6 +18,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
+app.use(cors());
 passport.use(authWithGoogle());
 
 app.use("/products", loggingMiddleware, productsRouter);
