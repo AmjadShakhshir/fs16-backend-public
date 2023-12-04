@@ -18,10 +18,12 @@ export const userBodySchema = z.object({
     .max(20, {
         message: "Must be at most 20 characters long"
     }),
+
     roleId: z.string()
     .refine((val) => mongoose.Types.ObjectId.isValid(val))
     .optional(),
-    logWithGoogle: z.boolean().optional(),
+    logInWithGoogle: z.boolean().optional(),
+
 })
 .strict();
 

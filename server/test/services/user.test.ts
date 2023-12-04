@@ -1,5 +1,3 @@
-import { response } from "express";
-
 import connect, { MongoHelper } from "../db-helper";
 import UserService from "../../services/usersService";
 import UserRepo from "../../models/UserModel";
