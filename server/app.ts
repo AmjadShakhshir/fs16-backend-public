@@ -20,7 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(cors());
 passport.use(authWithGoogle());
-app.use(cors());
 
 app.use("/products", loggingMiddleware, productsRouter);
 app.use("/categories", loggingMiddleware, categoriesRouter);
