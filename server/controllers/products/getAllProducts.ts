@@ -9,11 +9,15 @@ export const getAllProducts = async (
   res: Response,
   next: NextFunction
 ) => {
-  const queries = req.query;
-  const products =
+  try {
+    const queries = req.query;
+    const products =
     queries && Object.keys(queries).length > 0
       ? await services.queryHandling(queries)
       : await services.findAll();
 
-  res.status(200).json(products);
+    res.status(200).json(products);
+  } catch (error) {
+    next(ApiError.badRequest("Cannot get products"));
+  }
 };

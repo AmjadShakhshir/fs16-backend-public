@@ -14,7 +14,6 @@ const usersRouter = express.Router();
 
 usersRouter.get(
   "/",
-
   usersController.getAllUsers
 );
 usersRouter.get(
@@ -44,9 +43,9 @@ usersRouter.put(
 );
 usersRouter.delete(
   "/:userId",
-  checkAuth,
-  checkRoles(ROLE.ADMIN),
-  checkPermission("DELETE"),
+  // checkAuth,
+  // checkRoles(ROLE.ADMIN),
+  // checkPermission("DELETE"),
   usersController.deleteUser
 );
 usersRouter.post("/signup", emailChecker, usersController.signUp);

@@ -19,6 +19,6 @@ export async function createCategory(
     .status(201)
     .json({
       message: "Category successfully created",
-      newCategory: newCategory,
+      newCategory,
     });
 }

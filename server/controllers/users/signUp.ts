@@ -9,5 +9,5 @@ export async function signUp(req: Request, res: Response, next: NextFunction) {
         next(ApiError.badRequest("User not created"));
         return;
     }
-  res.status(200).json({ user, message: "User created" });
+  res.status(201).json({user, message: "User created"});
 }
